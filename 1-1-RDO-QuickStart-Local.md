@@ -132,7 +132,7 @@ OpenStack環境を作るには最低限以下のパラメータを設定しま�
 CONFIG_DEFAULT_PASSWORD=password
 ````
 
-- コンポーネントのインストール可否
+- コンポーネントのインストール可否を指定
 
 ````
 CONFIG_GLANCE_INSTALL=y
@@ -166,7 +166,7 @@ CONFIG_NOVA_COMPUTE_HOSTS=192.168.1.10,192.168.1.11
 
 eth1がゲートウェイに接続されている場合の記述例。
 
-（例-1）loを利用(All-in-one時のみ可)
+（例-1）loを利用(All-in-one時のみ可)。
 
 ````
 CONFIG_NOVA_COMPUTE_PRIVIF=lo
@@ -287,7 +287,7 @@ NETMASK=255.255.255.0
 NM_CONTROLLED=no
 ````
 
-- 「Warning: NetworkManager is active on 172.17.14.11. OpenStack networking currently does not work on systems that have the Network Manager service enabled.」のようなメッセージが出た場合は、NetworkManagerからnetworkサービスへの切り替え設定を実行します｡再起動後networkサービスが使われます。
+- Packstackインストーラー実行後に、「Warning: NetworkManager is active on 172.17.14.11. OpenStack networking currently does not work on systems that have the Network Manager service enabled.」のようなメッセージが出た場合は、NetworkManagerからnetworkサービスへの切り替え設定を実行します｡再起動後networkサービスが使われます。
 
 ````
 # systemctl disable NetworkManager
