@@ -3,7 +3,7 @@
 最終更新日: 2014/12/17
 
 ##この文書について
-この文書はとりあえず1台に全部入りのOpenStack Icehouse環境をさくっと構築する場合の手順を説明しています。
+この文書はとりあえず1台に全部入りのOpenStack Juno環境をさくっと構築する場合の手順を説明しています。
 
 この文書は以下の公開資料を元にしています。
 
@@ -350,3 +350,5 @@ nova-cert        junode1     internal         enabled    :-)   2014-12-17 08:17:
 - <https://github.com/ytooyama/rdo-icehouse/blob/master/2-RDO-QuickStart-Networking.md>
 - <https://github.com/ytooyama/rdo-icehouse/blob/master/3-RDO-QuickStart-AddUser.md>
 - <https://github.com/ytooyama/rdo-icehouse/blob/master/4-RDO-QuickStart-Others.md>
+
+なお、Cinderを構築していない状態で、Horizonを開き、インスタンスを起動しようとすると「エラー: Invalid service catalog service: volume」というエラーがでます。Cinderが構築されていると出ないエラーなので、Cinderが構築されている前提で作られているHorizonのバグだと思われます。
