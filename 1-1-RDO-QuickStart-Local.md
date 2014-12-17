@@ -300,15 +300,14 @@ NM_CONTROLLED=no
 # reboot
 ````
 
-##Step 8: 動作確認
-
+###◆動作確認
 Packstackインストーラーによるインストール時にエラー出力がされなければ問題はありませんが、念のためbr-exとNova、Neutronエージェントが導入されてかつ正しく認識されていることを確認しましょう。
 
 まずは再起動後にbr-exが正しく動作し、外のネットワークとつながっていることを確認します。
 
 ````
 # ip a s br-ex | grep inet
-    inet 172.17.14.11/24 brd 172.17.14.255 scope global br-ex
+    inet 192.168.1.10/24 brd 192.168.1.255 scope global br-ex
     inet6 fe80::54d3:7dff:fee0:a046/64 scope link
 # ping enterprisecloud.jp -c 3 -I br-ex | grep "packet loss"
 3 packets transmitted, 3 received, 0% packet loss, time 2003ms
@@ -344,10 +343,10 @@ nova-cert        junode1     internal         enabled    :-)   2014-12-17 08:17:
 +--------------------+---------+-------+
 ````
 
-##Step 9: この後の設定について
+##この後の設定について
 
 この後の手順はHavanaやIcehouseと同様です。以下のページをそれぞれ参考に、ネットワーク作成など行ってください。
 
-- https://github.com/ytooyama/rdo-icehouse/blob/master/2-RDO-QuickStart-Networking.md
-- https://github.com/ytooyama/rdo-icehouse/blob/master/3-RDO-QuickStart-AddUser.md
-- https://github.com/ytooyama/rdo-icehouse/blob/master/4-RDO-QuickStart-Others.md
+- <https://github.com/ytooyama/rdo-icehouse/blob/master/2-RDO-QuickStart-Networking.md>
+- <https://github.com/ytooyama/rdo-icehouse/blob/master/3-RDO-QuickStart-AddUser.md>
+- <https://github.com/ytooyama/rdo-icehouse/blob/master/4-RDO-QuickStart-Others.md>
