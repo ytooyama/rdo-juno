@@ -87,7 +87,7 @@ SELinuxの設定を変更します｡
 ソフトウェアパッケージのインストールとアップデートを行う｡
 Neutron環境の構築にはSELinuxの設定変更が必要なので設定完了後、一旦再起動する｡
 
-次のコマンドを実行(Fedora 21では不要):
+次のコマンドを実行:
 
 ````
 # yum install -y http://rdo.fedorapeople.org/openstack-juno/rdo-release-juno.rpm
