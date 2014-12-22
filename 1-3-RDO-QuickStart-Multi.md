@@ -469,6 +469,41 @@ opnet# ip a s br-ex | grep inet
 
 パケットロスがないことを確認します。
 
+また、ネットワークノード側でovs-vsctl showを実行し、br-exのインターフェイスに想定しているインターフェイスがひも付けられていること、br-tunのlocal_ipとremote_ipが想定したものになっているかを確認します。
+
+````
+opnet# ovs-vsctl show
+21567de1-df44-4f7b-a3b8-ac7b126669db
+    Bridge br-int
+        fail_mode: secure
+        Port patch-tun
+            Interface patch-tun
+                type: patch
+                options: {peer=patch-int}
+        Port br-int
+            Interface br-int
+                type: internal
+    Bridge br-ex
+        Port br-ex
+            Interface br-ex
+                type: internal
+        Port "ens192"
+            Interface "ens192"
+    Bridge br-tun
+        Port patch-int
+            Interface patch-int
+                type: patch
+                options: {peer=patch-tun}
+        Port "vxlan-c0a80064"
+            Interface "vxlan-c0a80064"
+                type: vxlan
+                options: {df_default="true", in_key=flow, local_ip="192.168.0.101", out_key=flow, remote_ip="192.168.0.100"}
+        Port br-tun
+            Interface br-tun
+                type: internal
+    ovs_version: "2.3.0-git39ebb203"
+````
+
 つぎに、OpenStack NovaコンポーネントのステートがOKであることを確認します。
 
 ````
