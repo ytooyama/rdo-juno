@@ -461,7 +461,7 @@ Packstackインストーラーによるインストール時にエラー出力�
 
 ````
 opnet# ip a s br-ex | grep inet
-    inet 192.168.1.10/24 brd 192.168.1.255 scope global br-ex
+    inet 192.168.1.101/24 brd 192.168.1.255 scope global br-ex
     inet6 fe80::54d3:7dff:fee0:a046/64 scope link
 # ping enterprisecloud.jp -c 3 -I br-ex | grep "packet loss"
 3 packets transmitted, 3 received, 0% packet loss, time 2003ms
