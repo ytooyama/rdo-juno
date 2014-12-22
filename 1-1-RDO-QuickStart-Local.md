@@ -1,6 +1,6 @@
-#RDO Neutron Quickstart 単体構成編
+#RDO Juno-Neutron Quickstart 単体構成編
 
-最終更新日: 2014/12/17
+最終更新日: 2014/12/22
 
 ##この文書について
 この文書はとりあえず1台に全部入りのOpenStack Juno環境をさくっと構築する場合の手順を説明しています。
@@ -134,14 +134,16 @@ CONFIG_DEFAULT_PASSWORD=password
 
 - コンポーネントのインストール可否を指定
 
+インストールする(y)と設定した場合、追加の設定を行う必要があるものもあります。
+
 ````
 CONFIG_GLANCE_INSTALL=y
-CONFIG_CINDER_INSTALL=y
+CONFIG_CINDER_INSTALL=n
 CONFIG_NOVA_INSTALL=y
 CONFIG_NEUTRON_INSTALL=y
 CONFIG_HORIZON_INSTALL=y
-CONFIG_SWIFT_INSTALL=y
-CONFIG_CEILOMETER_INSTALL=y
+CONFIG_SWIFT_INSTALL=n
+CONFIG_CEILOMETER_INSTALL=n
 CONFIG_HEAT_INSTALL=n
 CONFIG_NAGIOS_INSTALL=y
 ````
@@ -180,6 +182,20 @@ CONFIG_NOVA_NETWORK_PUBIF=eth1
 CONFIG_NOVA_COMPUTE_PRIVIF=eth0
 CONFIG_NOVA_NETWORK_PRIVIF=eth0
 CONFIG_NOVA_NETWORK_PUBIF=eth1
+````
+
+- そのほか、適宜設定を変更する
+
+````
+#Message Service
+CONFIG_AMQP_HOST=192.168.1.10
+CONFIG_AMQP_SSL_PORT=5671
+#DB Host
+CONFIG_MARIADB_HOST=192.168.1.10
+#Region
+CONFIG_KEYSTONE_REGION=RegionOne
+#MongoDB Host
+CONFIG_MONGODB_HOST=192.168.1.10
 ````
 
 - Dashboardにアクセスするパスワード
