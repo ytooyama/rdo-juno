@@ -86,6 +86,7 @@ net.ipv4.conf.all.forwarding = 1
 ````
 # vi /etc/hosts
 ...
+192.168.1.99   nfs
 192.168.1.100  opctl
 192.168.1.101  opnet
 ````
@@ -235,6 +236,15 @@ CONFIG_KEYSTONE_ADMIN_PW=admin
 ````
 CONFIG_PROVISION_DEMO=n
 ````
+
+- Cinder VolumeのバックエンドとしてNFSを利用する設定を行う
+
+````
+CONFIG_CINDER_BACKEND=nfs
+CONFIG_CINDER_NFS_MOUNTS=192.168.1.9:/nfs
+````
+
+/etc/exportsに指定したディレクトリを指定すること。
 
 ##Step 8: OpenStackのインストール
 
