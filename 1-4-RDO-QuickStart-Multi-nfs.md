@@ -1,4 +1,4 @@
-#RDO Juno-Neutron Quickstart マルチノード編
+#RDO Juno-Neutron Quickstart マルチノード編(NFS-Cinder)
 
 最終更新日 2015/1/13
 
@@ -158,7 +158,6 @@ CONFIG_DEFAULT_PASSWORD=password
 
 ````
 CONFIG_GLANCE_INSTALL=y
-CONFIG_CINDER_INSTALL=n
 CONFIG_NOVA_INSTALL=y
 CONFIG_NEUTRON_INSTALL=y
 CONFIG_HORIZON_INSTALL=y
@@ -167,6 +166,16 @@ CONFIG_CEILOMETER_INSTALL=n
 CONFIG_HEAT_INSTALL=n
 CONFIG_NAGIOS_INSTALL=y
 ````
+
+- Cinder VolumeのバックエンドとしてNFSを利用する設定を行う
+
+````
+CONFIG_CINDER_INSTALL=y
+CONFIG_CINDER_BACKEND=nfs
+CONFIG_CINDER_NFS_MOUNTS=192.168.1.9:/nfs
+````
+
+/etc/exportsに指定したディレクトリを指定すること。
 
 - コンピュートノードを指定(カンマ区切りで複数可)
 
@@ -236,15 +245,6 @@ CONFIG_KEYSTONE_ADMIN_PW=admin
 ````
 CONFIG_PROVISION_DEMO=n
 ````
-
-- Cinder VolumeのバックエンドとしてNFSを利用する設定を行う
-
-````
-CONFIG_CINDER_BACKEND=nfs
-CONFIG_CINDER_NFS_MOUNTS=192.168.1.9:/nfs
-````
-
-/etc/exportsに指定したディレクトリを指定すること。
 
 ##Step 8: OpenStackのインストール
 
