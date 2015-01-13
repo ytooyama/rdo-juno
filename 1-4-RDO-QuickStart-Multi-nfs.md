@@ -342,9 +342,10 @@ firewall_driver = neutron.agent.linux.iptables_firewall.OVSHybridIptablesFirewal
 ネットワークノード以外のネットワークインターフェイス設定を変更します。Network Managerの管理から外す設定を行うため、Network Manager固有のパラメータを設定ファイルから削除orコメントアウトします。
 
 - Public
+
 ````
-# vi /etc/sysconfig/network-scripts/ifcfg-eth0
-DEVICE=eth0
+# vi /etc/sysconfig/network-scripts/ifcfg-eth1
+DEVICE=eth1
 HWADDR=xx:xx:xx:xx:xx:xx # Your eth1's hwaddr
 TYPE=Ethernet
 ONBOOT=yes
@@ -358,6 +359,7 @@ NM_CONTROLLED=no       #NetworkManagerで管理しない
 ````
 
 - Internal
+
 ````
 # vi /etc/sysconfig/network-scripts/ifcfg-eth0
 DEVICE=eth0
@@ -369,6 +371,7 @@ IPADDR=192.168.0.100
 NETMASK=255.255.255.0
 NM_CONTROLLED=no
 ````
+
 
 ###◆public用として使うNICの設定を確認
 コマンドを実行して、アンサーファイルに設定したpublic用NICを確認します。
