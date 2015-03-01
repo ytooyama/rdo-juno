@@ -9,8 +9,8 @@
 
 RDO Neutron Quickstart
 
-<http://openstack.redhat.com/Neutron-Quickstart>
-<http://openstack.redhat.com/Neutron_with_existing_external_network>
+- <http://openstack.redhat.com/Neutron-Quickstart>
+- <http://openstack.redhat.com/Neutron_with_existing_external_network>
 
 ##Step 0: 要件
 
