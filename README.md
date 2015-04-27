@@ -2,7 +2,7 @@ rdo-juno
 ==========
 
 ###これはなに
-RDO packstackでOpenStack Junoの色々な環境を作る手順書のようなものです。といってもまだ書き始めたばかりです。
+RDO packstackでOpenStack Junoの色々な環境を作る手順書のようなものです。
 
 ###環境について
 以下の環境でPackstackコマンドを実行して環境を作ります。
