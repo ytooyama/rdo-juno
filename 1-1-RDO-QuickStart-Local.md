@@ -1,6 +1,6 @@
 #RDO Juno-Neutron Quickstart 単体構成編
 
-最終更新日: 2014/12/22
+最終更新日: 2015/9/24
 
 ##この文書について
 この文書はとりあえず1台に全部入りのOpenStack Juno環境をさくっと構築する場合の手順を説明しています。
@@ -162,26 +162,6 @@ CONFIG_COMPUTE_HOSTS=192.168.1.10
 
 ````
 CONFIG_COMPUTE_HOSTS=192.168.1.10,192.168.1.11
-````
-
-- NICを利用したいものに変更する
-
-eth1がゲートウェイに接続されている場合の記述例。
-
-（例-1）loを利用(All-in-one時のみ可)。
-
-````
-CONFIG_NOVA_COMPUTE_PRIVIF=lo
-CONFIG_NOVA_NETWORK_PRIVIF=lo
-CONFIG_NOVA_NETWORK_PUBIF=eth1
-````
-
-（例-2）eth0を利用(複数のNICがある場合)。
-
-````
-CONFIG_NOVA_COMPUTE_PRIVIF=eth0
-CONFIG_NOVA_NETWORK_PRIVIF=eth0
-CONFIG_NOVA_NETWORK_PUBIF=eth1
 ````
 
 - そのほか、適宜設定を変更する
