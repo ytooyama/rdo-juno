@@ -1,6 +1,6 @@
 #RDO Juno-Neutron Quickstart マルチノード編(NFS-Cinder)
 
-最終更新日 2015/9/24
+最終更新日 2015/10/8
 
 
 ##この文書について
@@ -364,15 +364,6 @@ NETMASK=255.255.255.0
 NM_CONTROLLED=no
 ````
 
-
-###◆public用として使うNICの設定を確認
-コマンドを実行して、アンサーファイルに設定したpublic用NICを確認します。
-以降の手順ではeth1であることを前提として解説します。
-
-````
-# less {packstack-answers-*,answer.txt}|grep CONFIG_NOVA_NETWORK_PUBIF
-CONFIG_NOVA_NETWORK_PUBIF=eth1
-````
 
 ###◆public用として使うNICの設定ファイルを修正
 packstack実行後に__ネットワークノード__ヘログインして、eth1をbr-exにつなぐように設定をします(※BOOTPROTOは設定しない)

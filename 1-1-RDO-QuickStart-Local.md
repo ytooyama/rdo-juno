@@ -1,6 +1,6 @@
 #RDO Juno-Neutron Quickstart 単体構成編
 
-最終更新日: 2015/9/24
+最終更新日: 2015/10/8
 
 ##この文書について
 この文書はとりあえず1台に全部入りのOpenStack Juno環境をさくっと構築する場合の手順を説明しています。
@@ -212,14 +212,6 @@ CONFIG_NEUTRON_ML2_TENANT_NETWORK_TYPES=local
 
 - <http://openstack.redhat.com/Neutron_with_existing_external_network>
 
-###◆public用として使うNICの設定を確認
-コマンドを実行して、アンサーファイルに設定したpublic用NICを確認します。
-以降の手順ではeth1であることを前提として解説します。
-
-````
-# less {packstack-answers-*,answer.txt}|grep CONFIG_NOVA_NETWORK_PUBIF
-CONFIG_NOVA_NETWORK_PUBIF=eth1
-````
 
 ###◆public用として使うNICの設定ファイルを修正
 packstack実行後、eth1をbr-exにつなぐように設定をします(※BOOTPROTOは設定しない)
